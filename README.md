@@ -213,3 +213,89 @@ Este módulo es una demostración efectiva del uso de:
 
 
 El resultado es una ejecución fluida, paralela y segura del análisis de sentimientos.
+
+
+![Image](https://github.com/user-attachments/assets/d38fcbb2-e87c-4489-baa9-43fedf50d259)
+
+![Image](https://github.com/user-attachments/assets/f4cb6160-9066-49a7-acfd-5f1bb01c8845)
+
+---
+## 🎮 2. Juego Platformer (Pygame + Concurrencia)
+
+El segundo entregable del laboratorio es un juego tipo **platformer** creado con **Pygame**. El objetivo es aplicar las técnicas de **hilos**, **mutex** y **semáforos** para controlar acciones simultáneas dentro de un entorno de juego en tiempo real.
+
+Este módulo demuestra cómo los mecanismos de concurrencia permiten manejar eventos paralelos de forma fluida y segura.
+
+---
+
+### 🧩 ¿Qué hace este módulo?
+
+Este juego utiliza la concurrencia para separar el *game loop* principal de la generación dinámica de entidades:
+
+* **✔ Hilo Principal:** Controla el movimiento del jugador, renderiza la pantalla y procesa las colisiones en tiempo real.
+* **✔ Hilo Secundario:** Ejecuta un proceso independiente encargado de generar y aparecer obstáculos/enemigos.
+* **✔ Locks:** Usados para proteger las **listas compartidas** de enemigos.
+* **✔ Semáforos:** Usados para **limitar** cuántos enemigos pueden existir en el nivel al mismo tiempo.
+
+
+
+El flujo de trabajo concurrente se estructura así:
+
+| Hilo / Componente | Función Principal |
+| :--- | :--- |
+| **Hilo 1** (Loop Principal) | Renderiza pantalla, mueve jugador, detecta colisiones. |
+| **Hilo 2** (Generador) | Genera enemigos, limitado por el semáforo, e inserta en la lista compartida. |
+| **Elemento Compartido** | Lista de enemigos. |
+
+---
+
+- ### 🕹️ 2.1 Código Base del Platformer
+
+**Archivo sugerido:** `platformer.py`
+
+Este juego integra los siguientes componentes de concurrencia de Python:
+
+* `threading.Thread`
+* `threading.Semaphore`
+* `threading.Lock`
+* `Lista compartida de enemigos`
+* `Hilo principal con Pygame (Interfaz)`
+* `Hilo secundario generando enemigos (Lógica)`
+
+---
+
+- ### 🔐 2.2 ¿Dónde usamos concurrencia y sincronización?
+
+| Elemento | Uso Específico | Propósito |
+| :--- | :--- | :--- |
+| **Hilos** | Uno principal (juego), uno secundario (generando enemigos). | Separar la lógica de la interfaz y la generación de eventos. |
+| **Lock** | Protege la lista `enemigos`. | Evitar **condiciones de carrera** al borrar/dibujar/modificar la lista desde hilos diferentes. |
+| **Semáforo** | Controla el `acquire()` en el hilo generador. | Limita el número máximo de enemigos simultáneos en pantalla. |
+| **Sección Crítica** | Acceso a la lista `enemigos` en ambos hilos. | Zona de código donde se requiere la protección del `Lock`. |
+| `daemon=True` | Aplicado al hilo generador. | Permite que el hilo secundario se cierre automáticamente al salir del juego principal. |
+
+---
+
+- ### ▶️ 2.3 ¿Cómo se ejecuta?
+
+Simplemente ejecuta el archivo principal del platformer usando Python 3:
+
+```bash
+python3 platformer.py
+```
+
+- #### 📦 2.4 Requisitos
+ El único requisito adicional para ejecutar la interfaz del juego es la librería Pygame.
+ Archivo sugerido: requirements_platformer.txt
+ ```bash
+pygame
+```
+![Image](https://github.com/user-attachments/assets/3153d7a1-9042-4228-82e6-d2bed04ba69c)
+
+![Image](https://github.com/user-attachments/assets/dd2064d9-0ee8-41f0-8f80-3ca73db4c818)
+
+![Image](https://github.com/user-attachments/assets/d75703b2-27c3-435f-941e-37d3a9083b60)
+
+![Image](https://github.com/user-attachments/assets/7c2cba29-69a2-4148-a647-5e7423067c2c)
+
+---
