@@ -82,6 +82,9 @@ En este entregable se implementa un **analizador de sentimientos** que clasifica
 * 😡 **Negativo**
 * 😐 **Neutral**
 
+También cuenta con la posibilidad de analizar sentimientos a través de archivos .txt y cuenta con la posibilidad de descargar los resultados
+del análisis
+
 El procesamiento se realiza usando **concurrencia** para analizar múltiples textos en paralelo, demostrando el uso de:
 
 | Componente | Uso en el Código | Propósito |
@@ -178,9 +181,9 @@ semaforo.release()
 - #### 📤 Ejemplo de Salida en Consola
 
 1. Ingresas:
-- Me siento feliz hoy.
-- Esto es horrible.
-- Es un día normal.
+- Bueno
+- Horrible
+- Más o menos
 
 La app procesa los textos en paralelo
 
@@ -191,13 +194,22 @@ Muestra:
 ➡️ Es un día normal. → NEUTRAL
 ```
 
-- #### 🧷 Conclusión
+- #### 🧷 Conclusión de este módulo
 Este módulo es una demostración efectiva del uso de:
 
-    ✔ Hilos para paralelismo de tareas.
+ Este módulo demuestra:
 
-    ✔ Mutex para gestión segura de secciones críticas.
+✔ Concurrencia real aplicada
 
-    ✔ Semáforos para control de concurrencia y limitación de recursos.
+✔ Uso de hilos para paralelizar tareas
+
+✔ Protección de datos con mutex
+
+✔ Control de carga con semáforo
+
+✔ Interfaz moderna con Streamlit
+
+✔ Implementación práctica en procesamiento de texto
+
 
 El resultado es una ejecución fluida, paralela y segura del análisis de sentimientos.
