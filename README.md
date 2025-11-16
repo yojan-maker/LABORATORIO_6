@@ -78,9 +78,9 @@ Archivo recomendado:
 
 En este entregable se implementa un **analizador de sentimientos** que clasifica textos como:
 
-* 😄 **Positivo**
-* 😡 **Negativo**
-* 😐 **Neutral**
+*  **Positivo**
+*  **Negativo**
+*  **Neutral**
 
 También cuenta con la posibilidad de analizar sentimientos a través de archivos .txt y cuenta con la posibilidad de descargar los resultados
 del análisis
