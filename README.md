@@ -211,6 +211,7 @@ Este módulo es una demostración efectiva del uso de:
 
 ✔ Implementación práctica en procesamiento de texto
 
+✔ Dockerización
 
 El resultado es una ejecución fluida, paralela y segura del análisis de sentimientos.
 
@@ -236,7 +237,7 @@ Este juego utiliza la concurrencia para separar el *game loop* principal de la g
 * **✔ Hilo Secundario:** Ejecuta un proceso independiente encargado de generar y aparecer obstáculos/enemigos.
 * **✔ Locks:** Usados para proteger las **listas compartidas** de enemigos.
 * **✔ Semáforos:** Usados para **limitar** cuántos enemigos pueden existir en el nivel al mismo tiempo.
-
+* **✔ Dockerización** 
 
 
 El flujo de trabajo concurrente se estructura así:
