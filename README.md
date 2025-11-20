@@ -300,3 +300,8 @@ pygame
 ![Image](https://github.com/user-attachments/assets/7c2cba29-69a2-4148-a647-5e7423067c2c)
 
 ---
+
+### 3) ✋🤖 Detector de Gestos con MediaPipe, Hilos y Docker
+
+En este laboratorio se implementó un sistema capaz de detectar gestos de mano en tiempo real utilizando visión por computadora, sincronización con hilos y despliegue en contenedores Docker.
+A continuación se explica de forma clara cómo se construyó este módulo del proyecto.
