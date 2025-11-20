@@ -329,3 +329,15 @@ MediaPipe se encarga internamente de:
 - Clasificar el gesto
 
 Esto permite obtener resultados rápidos y eficientes sin implementar un modelo desde cero.
+
+------------
+
+#### 🧵 2. Uso de hilos, semáforos y sección crítica
+
+Para que el sistema pueda procesar la cámara en tiempo real sin bloquearse, se dividió la lógica en dos hilos:
+
+##### 🔹 Hilo 1 – Captura de video
+Lee continuamente los frames de la cámara (cv2.VideoCapture).
+
+##### 🔹 Hilo 2 – Procesamiento (MediaPipe)
+Toma los frames capturados y ejecuta el modelo de reconocimiento.
