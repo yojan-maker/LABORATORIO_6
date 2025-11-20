@@ -341,3 +341,15 @@ Lee continuamente los frames de la cámara (cv2.VideoCapture).
 
 ##### 🔹 Hilo 2 – Procesamiento (MediaPipe)
 Toma los frames capturados y ejecuta el modelo de reconocimiento.
+
+------------
+
+#### 🧷 ¿Por qué hilos?
+
+El procesamiento con IA es más lento que leer la cámara.
+Si todo se hiciera en un solo hilo, el video se congelaría.
+Usar dos hilos permite:
+
+- Captura continua sin lag
+- Procesamiento paralelo
+- Mejor rendimiento en tiempo real
