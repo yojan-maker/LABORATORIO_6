@@ -3,7 +3,7 @@
 Este repositorio contiene las prácticas desarrolladas para el laboratorio 6
 1. **Análisis de sentimientos** (texto e imágenes).
 2. **Juego platformer** en Pygame con concurrencia.
-3. 
+3. **Detector de Gestos** con Mediapipe, Hilos y Docker.
 ---
 
 ## 🎯 Objetivo del Proyecto
@@ -411,3 +411,23 @@ Además del procesamiento interno, se desarrolló una interfaz en Streamlit para
 - Información del gesto detectado
 
 El frontend funciona como una capa visual encima del algoritmo.
+
+------------
+
+### ✅ Resultado Final
+
+El sistema final permite:
+
+✔ Detectar gestos de mano en tiempo real
+
+![Prueba 1 / Gesto de Saludo](https://github.com/yojan-maker/LABORATORIO_6/blob/main/Lab6/Gestos%20de%20mano/Prueba%20Manos%201.jpeg?raw=true)
+
+✔ Procesar video sin interrupciones gracias a hilos
+
+![Prueba 2 / Gesto de Like](https://github.com/yojan-maker/LABORATORIO_6/blob/main/Lab6/Gestos%20de%20mano/Prueba%20Manos%202.jpeg?raw=true)
+
+✔ Ejecutarse dentro de un contenedor Docker
+
+![Prueba 3 / Gesto de Paz con las dos manos](https://github.com/yojan-maker/LABORATORIO_6/blob/main/Lab6/Gestos%20de%20mano/Prueba%20Manos%203.jpeg?raw=true)
+
+✔ Explicar sincronización, secciones críticas y MediaPipe de forma clara
