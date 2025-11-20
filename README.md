@@ -70,7 +70,7 @@ Archivo recomendado:
 `requirements_juego.txt`
 
 ---
-### 3)
+### 3) Detector de Gestos con MediaPipe, Hilos y Docker
 
 ---
 
@@ -301,7 +301,7 @@ pygame
 
 ---
 
-### 3) ✋🤖 Detector de Gestos con MediaPipe, Hilos y Docker
+## 3) ✋🤖 Detector de Gestos con MediaPipe, Hilos y Docker
 
 En este laboratorio se implementó un sistema capaz de detectar gestos de mano en tiempo real utilizando visión por computadora, sincronización con hilos y despliegue en contenedores Docker.
 A continuación se explica de forma clara cómo se construyó este módulo del proyecto.
@@ -369,7 +369,7 @@ Bloques de código protegidos con mutex donde se comparten:
 frame_global
 resultado_global
 
-##### 📌 📌 Esto evita condiciones de carrera y garantiza que los datos sean consistentes.
+#####  📌 Esto evita condiciones de carrera y garantiza que los datos sean consistentes.
 
 ------------
 
