@@ -370,3 +370,15 @@ frame_global
 resultado_global
 
 ##### 📌 📌 Esto evita condiciones de carrera y garantiza que los datos sean consistentes.
+
+------------
+
+### 🐳 3. Construcción del contenedor Docker
+
+Se creó un contenedor ligero basado en Python 3.10 slim, que incluye:
+
+- OpenCV
+- MediaPipe
+- Librerías del sistema necesarias
+- El modelo gesture_recognizer.task
+- El script con hilos reconocimiento.py
