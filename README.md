@@ -353,3 +353,20 @@ Usar dos hilos permite:
 - Captura continua sin lag
 - Procesamiento paralelo
 - Mejor rendimiento en tiempo real
+
+------------
+
+#### 🔐 Mecanismos de sincronización usados
+
+- Mutex (Lock)
+Protege la sección crítica donde se comparte el frame y resultado entre hilos.
+Evita que ambos hilos editen la misma variable al mismo tiempo.
+- Semaphore
+El hilo de procesamiento espera hasta que haya un nuevo frame.
+Permite despertar al hilo solo cuando existen datos nuevos.
+- Sección crítica
+Bloques de código protegidos con mutex donde se comparten:
+frame_global
+resultado_global
+
+##### 📌 📌 Esto evita condiciones de carrera y garantiza que los datos sean consistentes.
