@@ -305,3 +305,27 @@ pygame
 
 En este laboratorio se implementó un sistema capaz de detectar gestos de mano en tiempo real utilizando visión por computadora, sincronización con hilos y despliegue en contenedores Docker.
 A continuación se explica de forma clara cómo se construyó este módulo del proyecto.
+
+------------
+
+#### 🧠 1. Algoritmo de detección de gestos con MediaPipe
+
+Para el reconocimiento se utilizó MediaPipe Tasks, una librería de Google diseñada para tareas de visión como detección de manos, gestos, clasificación, etc.
+
+El modelo utilizado fue:
+
+    gesture_recognizer.task
+
+El algoritmo general funciona así:
+
+1. Captura imágenes de la cámara en tiempo real.
+2. Convierte el frame a un formato compatible con MediaPipe.
+3. El modelo analiza la posición de la mano y detecta un gesto.
+
+MediaPipe se encarga internamente de:
+
+- Detectar la mano 🖐
+- Identificar postura y puntos clave
+- Clasificar el gesto
+
+Esto permite obtener resultados rápidos y eficientes sin implementar un modelo desde cero.
