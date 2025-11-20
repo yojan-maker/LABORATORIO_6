@@ -399,3 +399,15 @@ Se creó un contenedor ligero basado en Python 3.10 slim, que incluye:
     sudo docker run --device=/dev/video0:/dev/video0 detector-gestos
 
 El flag --device=/dev/video0 expone la cámara del host al contenedor.
+
+------------
+
+### 🌐 4. Despliegue en Streamlit (versión sencilla)
+
+Además del procesamiento interno, se desarrolló una interfaz en Streamlit para mostrar:
+
+- Vista previa de la cámara
+- Resultado del reconocimiento
+- Información del gesto detectado
+
+El frontend funciona como una capa visual encima del algoritmo.
