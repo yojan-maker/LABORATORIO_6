@@ -382,3 +382,20 @@ Se creó un contenedor ligero basado en Python 3.10 slim, que incluye:
 - Librerías del sistema necesarias
 - El modelo gesture_recognizer.task
 - El script con hilos reconocimiento.py
+
+------------
+
+### 🧩 Dockerfile utilizado
+
+- Instala dependencias de OpenCV
+- Instala requirements
+- Copia el proyecto
+- Ejecuta automáticamente el detector al arrancar el contenedor
+
+▶ Ejecución
+
+    sudo docker build -t detector-gestos .
+    
+    sudo docker run --device=/dev/video0:/dev/video0 detector-gestos
+
+El flag --device=/dev/video0 expone la cámara del host al contenedor.
